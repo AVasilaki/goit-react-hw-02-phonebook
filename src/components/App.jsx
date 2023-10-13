@@ -22,7 +22,10 @@ export class App extends Component {
       contacts: [...prevState.contacts, { ...newContact, id: nanoid() }],
     }));
   };
-
+  onRemoveContact = id => {
+    const { contacts } = this.state;
+    this.setState({ contacts: contacts.filter(contact => contact.id !== id) });
+  };
   render() {
     const { filter } = this.state;
 
@@ -32,13 +35,9 @@ export class App extends Component {
     );
     return (
       <>
-        <AddContact
-          // name={name}
-          // handleChange={this.handleChange}
-          addNewContact={this.handleAddContact}
-        ></AddContact>
+        <AddContact addNewContact={this.handleAddContact}></AddContact>
         <Filter handleFilter={this.handleFilter}></Filter>
-        <Contacts contacts={filtredContacts}></Contacts>
+        <Contacts contacts={filtredContacts} onRemoveContact={this.onRemoveContact}></Contacts>
       </>
     );
   }

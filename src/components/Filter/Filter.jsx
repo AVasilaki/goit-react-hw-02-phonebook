@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 export const Filter = ({ handleFilter }) => {
   return (
-    <div className='mb-2 '>
-      <label className='text-lg'>
+    <div className='mb-2 mt-6  '>
+      <label className='text-lg grid'>
         Find contacts by name
         <input
           type='text'

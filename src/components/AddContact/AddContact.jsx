@@ -1,23 +1,4 @@
 import PropTypes from 'prop-types';
-// export const AddContact = ({ handleChange, name, addNewContact }) => {
-//   return (
-//     <>
-//       <form onSubmit={addNewContact}>
-//         <label>
-//           Name:
-//           <input type='text' name='contact' value={name} onChange={handleChange} required />
-//         </label>
-//         <button type='submit'>Add contact</button>
-//       </form>
-//     </>
-//   );
-// };
-// AddContact.propTypes = {
-//   name: PropTypes.string,
-//   handleChange: PropTypes.func,
-//   addNewContact: PropTypes.func,
-//   contacts: PropTypes.array,
-// };
 import { Component } from 'react';
 
 export class AddContact extends Component {
@@ -42,9 +23,9 @@ export class AddContact extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} className='mb-2 '>
-        <h2 className='mb-4'>Phonebook</h2>
-        <label>
+      <form onSubmit={this.onSubmit} className='mb-2 flex flex-col gap-4 items-start'>
+        <h2 className='mb-4 text-3xl'>Phonebook</h2>
+        <label className=''>
           Name:
           <input
             type='text'
@@ -52,7 +33,7 @@ export class AddContact extends Component {
             required
             onChange={this.onChange}
             pattern='^[a-zA-Z]+$'
-            className='rounded-lg bg-blue-500 px-2 '
+            className='rounded-lg bg-blue-500 px-2 ml-6'
           />
         </label>
         <label>
@@ -63,12 +44,12 @@ export class AddContact extends Component {
             required
             onChange={this.onChange}
             pattern='^[ 0-9]+$'
-            className='rounded-lg bg-blue-500 px-2 '
+            className='rounded-lg bg-blue-500 px-2 ml-2'
           />
         </label>
         <button
           type='submit'
-          className='rounded-lg bg-blue-500 px-2 hover:bg-green-600 active:bg-rose-700 '
+          className='rounded-lg bg-blue-500 px-4 py-2 hover:bg-green-600 active:bg-rose-700 ml-auto'
         >
           add contact
         </button>
