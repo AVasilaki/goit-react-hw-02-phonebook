@@ -42,8 +42,8 @@ export class AddContact extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} className='mb-2 flex-initial w-64 '>
-        <h2 className='text-2xl mb-4'>Phonebook</h2>
+      <form onSubmit={this.onSubmit} className='mb-2 '>
+        <h2 className='mb-4'>Phonebook</h2>
         <label>
           Name:
           <input
@@ -68,7 +68,7 @@ export class AddContact extends Component {
         </label>
         <button
           type='submit'
-          className='rounded-lg bg-blue-500 px-2 hover:bg-green-600 active:bg-rose-700 mt-4'
+          className='rounded-lg bg-blue-500 px-2 hover:bg-green-600 active:bg-rose-700 '
         >
           add contact
         </button>

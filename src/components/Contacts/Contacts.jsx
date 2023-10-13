@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 export const Contacts = ({ contacts }) => {
   return (
     <>
-      <h2 className='text-2xl mb-4'>Contacts:</h2>
+      <h2 className=' mb-4'>Contacts:</h2>
       <ul>
         {contacts.map(({ id, name, number }) => (
-          <li key={id} className='mb-2 flex-initial w-64'>
+          <li key={id} className='mb-2'>
             <p>
               {name}: {number}
             </p>

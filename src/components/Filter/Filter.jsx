@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 export const Filter = ({ handleFilter }) => {
   return (
-    <div className='mb-2 flex-initial w-64 '>
+    <div className='mb-2 '>
       <label className='text-lg'>
         Find contacts by name
         <input
