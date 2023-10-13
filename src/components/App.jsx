@@ -1,14 +1,39 @@
-import styles from './App.module.css';
+import { Component } from 'react';
+import { nanoid } from 'nanoid';
+import { AddContact } from './AddContact/AddContact';
+import { Contacts } from './Contacts/Contacts';
 
-export const App = () => (
-  <>
-    <h1 className={styles.title}>Hello, React</h1>
-  </>
-);
+export class App extends Component {
+  state = {
+    contacts: [
+      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+    ],
+    name: '',
+  };
+  handleChange = evt => {
+    this.setState({ name: evt.target.value });
+  };
+  handleAddContact = newContact => {
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts, { ...newContact, id: nanoid() }],
+    }));
+  };
 
-//! Або можна зробити ось так без import styles
-//! Моя вам порада - оскільки ми використовуємо Tailwind,
-//! ми повністю позбавляємося CSS файлів, тому краще писати інлайн стилі,
-//! оскільки Tailwind сам все зробить за нас, а також неперевершено оптимізує
-//! CSS файли, тому бийте компоненти на маленькі під-компоненти
-//! щоб воно виглядало чисто, і постарайтеся повністю позбавитися від CSS файлів.
+  render() {
+    const { name } = this.state;
+    const { contacts } = this.state;
+    return (
+      <>
+        <AddContact
+          // name={name}
+          // handleChange={this.handleChange}
+          addNewContact={this.handleAddContact}
+        ></AddContact>
+        <Contacts contacts={contacts}></Contacts>
+      </>
+    );
+  }
+}
