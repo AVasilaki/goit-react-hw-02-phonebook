@@ -42,16 +42,36 @@ export class AddContact extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className='mb-2 flex-initial w-64 '>
+        <h2 className='text-2xl mb-4'>Phonebook</h2>
         <label>
           Name:
-          <input type='text' name='name' required onChange={this.onChange} pattern='^[a-zA-Z]+$' />
+          <input
+            type='text'
+            name='name'
+            required
+            onChange={this.onChange}
+            pattern='^[a-zA-Z]+$'
+            className='rounded-lg bg-blue-500 px-2 '
+          />
         </label>
         <label>
           Number:
-          <input type='tel' name='number' required onChange={this.onChange} pattern='^[ 0-9]+$' />
+          <input
+            type='tel'
+            name='number'
+            required
+            onChange={this.onChange}
+            pattern='^[ 0-9]+$'
+            className='rounded-lg bg-blue-500 px-2 '
+          />
         </label>
-        <button type='submit'>add contact</button>
+        <button
+          type='submit'
+          className='rounded-lg bg-blue-500 px-2 hover:bg-green-600 active:bg-rose-700 mt-4'
+        >
+          add contact
+        </button>
       </form>
     );
   }

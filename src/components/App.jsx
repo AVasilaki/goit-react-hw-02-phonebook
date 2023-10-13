@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { AddContact } from './AddContact/AddContact';
 import { Contacts } from './Contacts/Contacts';
+import { Filter } from './Filter/Filter';
 
 export class App extends Component {
   state = {
@@ -11,10 +12,10 @@ export class App extends Component {
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
-    name: '',
+    filter: '',
   };
-  handleChange = evt => {
-    this.setState({ name: evt.target.value });
+  handleFilter = evt => {
+    this.setState({ filter: evt.target.value });
   };
   handleAddContact = newContact => {
     this.setState(prevState => ({
@@ -23,8 +24,12 @@ export class App extends Component {
   };
 
   render() {
-    const { name } = this.state;
+    const { filter } = this.state;
+
     const { contacts } = this.state;
+    const filtredContacts = contacts.filter(contact =>
+      contact.name.toLowerCase().trim().includes(filter.toLowerCase().trim())
+    );
     return (
       <>
         <AddContact
@@ -32,7 +37,8 @@ export class App extends Component {
           // handleChange={this.handleChange}
           addNewContact={this.handleAddContact}
         ></AddContact>
-        <Contacts contacts={contacts}></Contacts>
+        <Filter handleFilter={this.handleFilter}></Filter>
+        <Contacts contacts={filtredContacts}></Contacts>
       </>
     );
   }
