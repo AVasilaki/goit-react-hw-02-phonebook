@@ -8,7 +8,7 @@ export const Filter = ({ handleFilter }) => {
           type='text'
           name='filter'
           onChange={handleFilter}
-          className='rounded-lg bg-blue-500 px-2 '
+          className='rounded-lg bg-blue-500 px-2 text-white '
         ></input>
       </label>
     </div>

@@ -33,7 +33,7 @@ export class AddContact extends Component {
             required
             onChange={this.onChange}
             pattern='^[a-zA-Z]+$'
-            className='rounded-lg bg-blue-500 px-2 ml-6'
+            className='rounded-lg bg-blue-500 px-2 ml-6 text-white'
           />
         </label>
         <label>
@@ -44,12 +44,12 @@ export class AddContact extends Component {
             required
             onChange={this.onChange}
             pattern='^[ 0-9]+$'
-            className='rounded-lg bg-blue-500 px-2 ml-2'
+            className='rounded-lg bg-blue-500 px-2 ml-2 text-white'
           />
         </label>
         <button
           type='submit'
-          className='rounded-lg bg-blue-500 px-4 py-2 hover:bg-green-600 active:bg-rose-700 ml-auto'
+          className='rounded-lg bg-blue-500 px-4 py-2 hover:bg-green-600 active:bg-rose-700 ml-auto text-white'
         >
           add contact
         </button>

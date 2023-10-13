@@ -12,7 +12,7 @@ export const Contacts = ({ contacts, onRemoveContact }) => {
             <button
               type='button'
               onClick={() => onRemoveContact(id)}
-              className='rounded-lg bg-blue-500 px-2 hover:bg-rose-600 active:bg-rose-700 mt-2'
+              className='rounded-lg bg-blue-500 px-2 hover:bg-rose-600 active:bg-rose-700 mt-2 text-white'
             >
               Delete
             </button>
@@ -25,4 +25,5 @@ export const Contacts = ({ contacts, onRemoveContact }) => {
 
 Contacts.propTypes = {
   contacts: PropTypes.array,
+  onRemoveContact: PropTypes.func,
 };
