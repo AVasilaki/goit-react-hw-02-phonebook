@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // export const AddContact = ({ handleChange, name, addNewContact }) => {
 //   return (
 //     <>
@@ -76,3 +76,6 @@ export class AddContact extends Component {
     );
   }
 }
+AddContact.propTypes = {
+  addNewContact: PropTypes.func,
+};

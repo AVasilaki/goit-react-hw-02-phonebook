@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export const Filter = ({ handleFilter }) => {
   return (
     <div className='mb-2 flex-initial w-64 '>
@@ -12,4 +13,7 @@ export const Filter = ({ handleFilter }) => {
       </label>
     </div>
   );
+};
+Filter.propTypes = {
+  handleFilter: PropTypes.func,
 };
