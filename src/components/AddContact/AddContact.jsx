@@ -32,7 +32,8 @@ export class AddContact extends Component {
             name='name'
             required
             onChange={this.onChange}
-            pattern='^[a-zA-Z]+$'
+            // pattern='^[a-zA-Z]+$'
+            pattern="^[a-zA-Zа-яА-Я]+(([' \\-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             className='rounded-lg bg-blue-500 px-2 ml-6 text-white'
           />
         </label>
